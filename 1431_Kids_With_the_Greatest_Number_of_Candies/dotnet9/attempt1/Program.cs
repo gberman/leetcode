@@ -35,7 +35,7 @@ string PrintTests(Input input, bool[] expected)
 {
     Solution solution = new();
     var processed = solution.KidsWithCandies(input.candies, input.extraCandies);
-    string status = expected == processed ? "success" : "failure";
+    string status = Matches(expected, processed) ? "success" : "failure";
     return $"[{status}] Kid will have the max number of candies: '{PrintArray(input.candies)}' when given an extra: {input.extraCandies} ==> '{PrintList(processed)}'";
 }
 
